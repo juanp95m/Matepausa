@@ -38,20 +38,20 @@ int main() {
 }
 ```
 
-### Explicacion
+### Explanation
 
-| Contenedor | Uso | Caracteristicas |
-|------------|-----|-----------------|
-| `std::list<int>` | lst1 | Lista doblemente enlazada |
-| `std::map<std::string, IOperation*>` | map1 | Mapa clave-valor |
-| `std::vector<int>` | v1, v2 | Arrays dinamicos |
+| Container | Name | Features |
+|-----------|------|----------|
+| `std::list<int>` | lst1 | Doubly linked list |
+| `std::map<std::string, IOperation*>` | map1 | Key-value map |
+| `std::vector<int>` | v1, v2 | Dynamic arrays |
 
-### Metodos clave
+### Key Methods
 
-- `push_back(elemento)` - anade elemento al final
-- `begin()` - iterador al primer elemento
-- `end()` - iterador past-the-end (no al ultimo)
-- `const_iterator` - iterador de solo lectura
+- `push_back(element)` - adds element to the end
+- `begin()` - iterator to the first element
+- `end()` - past-the-end iterator (not the last element)
+- `const_iterator` - read-only iterator
 
 ---
 
@@ -91,30 +91,30 @@ int main() {
 20
 ```
 
-### Explicacion
+### Explanation
 
-- `for_each(begin, end, function)` - aplica una funcion a cada elemento del rango
-- `displayInt` es un functor (funcion) que imprime cada entero
+- `for_each(begin, end, function)` - applies a function to each element in the range
+- `displayInt` is a functor (function) that prints each integer
 
 ---
 
 ## Common Containers
 
-| Contenedor | Descripcion | Uso |
-|------------|-------------|-----|
-| `std::vector<T>` | Array dinamico | Acceso rapido por indice, inserccion al final eficiente |
-| `std::list<T>` | Lista doblemente enlazada | Inserccion/eliminacion rapida en cualquier posicion |
-| `std::map<K, V>` | Arbol balanceado | Pares clave-valor ordenados por clave |
+| Container | Description | Use Case |
+|-----------|-------------|----------|
+| `std::vector<T>` | Dynamic array | Fast index access, efficient end insertion |
+| `std::list<T>` | Doubly linked list | Fast insert/delete at any position |
+| `std::map<K, V>` | Balanced tree | Key-value pairs sorted by key |
 
 ---
 
 ## Key Points
 
-1. **STL containers almacenan elementos por valor** (o puntero si se necesita polimorfismo)
-2. **Iteradores** para recorrer contenedores: `begin()`, `end()`
-3. **`<algorithm>`** proporciona funciones utiles como `for_each`
-4. **`.end()` retorna un iterador past-the-end** (NO es el ultimo elemento)
-5. **Templates**: los contenedores son genericos y funcionan con cualquier tipo de dato
+1. **STL containers store elements by value** (or pointer if polymorphism needed)
+2. **Iterators** to traverse containers: `begin()`, `end()`
+3. **`<algorithm>`** provides useful functions like `for_each`
+4. **`.end()` returns a past-the-end iterator** (NOT the last element)
+5. **Templates**: containers are generic and work with any data type
 
 ---
 
