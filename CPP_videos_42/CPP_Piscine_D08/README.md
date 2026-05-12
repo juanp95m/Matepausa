@@ -10,4 +10,4 @@ Introduction to the C++ Standard Library containers and algorithms.
 
 ---
 
-← [Index](../README.md) | [Previous: D07](../CPP_Piscine_D07/README.md) | [Next: Index](./README.md) →
+← [Index](../README.md) | [Previous: D07](../CPP_Piscine_D07/README.md) | [Next: Index](../README.md) →

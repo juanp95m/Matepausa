@@ -103,7 +103,11 @@ int main() {
 ```
 
 ## Execution Output
+
+The program is compiled and run, demonstrating both approaches.
+
 ```bash
+$ g++ -Wall -Wextra -Wno-unused -Werror Sample1.class.cpp Sample2.class.cpp main.cpp
 $ ./a.out
 Constructor called
 this->a1 = a

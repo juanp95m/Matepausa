@@ -149,4 +149,4 @@ Animal destructor called
 
 ---
 
-← [Index](./README.md) | [Next: Index](./README.md) →
+← [Index](./README.md) | [Next: ../CPP_Piscine_D04/00_Intra_Elearning_sub-typing_polymorphism.md](../CPP_Piscine_D04/00_Intra_Elearning_sub-typing_polymorphism.md) →

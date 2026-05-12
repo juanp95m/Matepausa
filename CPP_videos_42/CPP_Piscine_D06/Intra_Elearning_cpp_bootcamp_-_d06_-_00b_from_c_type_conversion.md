@@ -4,203 +4,67 @@ Since you started coding in C about a year ago, you probably had a chance to use
 
 ```
 --- Inicio de extracción: Intra_Elearning_cpp_bootcamp_-_d06_-_00b_from_c_type_conversion_frames ---
-42
-\J
-
-ti)
-42
-
-<1
-Ro 8"
-
-42
-
-iscine C++
-a’ #06
-
-Thop
-
-Zz
-
-iscine €++
-ort 6
-
-Tho,
-
-M |
-Loading cc-mode... 4
-DaSN-5.£5 © Main.c
-2
-
-[3]+ Stopped emacs -nw main.c
-
-pash-3,2$ ff
-5.
-6
-7
-
-void dump_32bits_integer€ int const n );
-10void dump_64bi ts_doubleC double const z );
-11
-
-12
-
-13
-
-14
-
-15
-
-16int main€ void ) {
-17
-
-1 int a = 42;
-
-19
-
-20 double b =a;
-
-21 double c = (double) a;
-
-22
-
-23 double d =a;
-
-int e =d;
-
-int f = Cint) d;
-
-dump_32bits_integer( a );
-
-dump_64bits_double( b );
-dump_64bits_double( ¢ );
-
-32 dump_64bits_double( d );
-dump_32bits_integer( e );
-dump_32bits_integer( f );
-
-Top (21,8) «C/1_Abbrev)~
-
-DasSN=5.2> € main.c
-
-[1]+ Stopped emacs -nw main.c
-bash-3.2$ gcc -Wall -Wextra -Werror bits.c main.c
-
-7
-
-DasSN=5.2> € main.c
-
-[1]+ Stopped emacs -nw main.c
-bash-3.2$ gcc -Wall -Wextra -Werror bits.c main.c
-bash-3.2$ ./a.out
-
-Dasn-5.2<> © main.c
-
-[1]+ Stopped emacs -nw main.c
-bash-3.2$ gcc -Wall -Wextra -Werror bits.c main.c
-
-DasN=3.2> € main.c
-
-[1]+ Stopped emacs -nw main.c
-bash-3.2$ gcc -Wall -Wextra -Werror bits.c main.c
-bash-3.2$ ./a.out
-
-C 42]: 00000000 02000000 00000000 00101010
-
-[ 42.000008]: © 10000000100 0101
-[ 02000000 02000000 20000000 00101010
-[ 42]: 00000200 20002000 00000000 02101010
-bash-3.2$ fol
-
-DasN=5.25 © main.c
-
-[2+ Stopped emacs -nw main.
-
-bash-3.2$ gcc -Wall -Wextra -Werror bits.c main.c
-
-bash-3.2$ ./a.out
-
-[i 42]: 90000200 02222002 20000000 00101010
-
-[742 000000]: @ 10000000102 0101000 DOr
-
-[842.008800]: 2 100000001028 010100000R00R00000000000"
-
-C -42 620008] =» 0° 16009000162 -@(e1ee0e8e~e0ee9e0000000000000000000000000000000
-[void 42]: 0000000 60000G06-06000000s0203910
-
-[ 42]: 00000002 90000000 90000000 00101010
-bash-3.2$ fal]
-int eein€ void ) {
-int a = 42;
-
-double b =a;
-
-doutfje ¢ = (double) a;
-double d =a;
-
-int e =d;
-
-int f = (Cint) d;
-dump_32bits_integer( a );
-
-dump_64bits_double( b );
-i dump_64bits_double( c );
-
-dump_G4bits_double( d );
-dump_32bits_integer( e );
-dump_32bits_integer( f );
-
-) 5
-dump_32bits_integer( a );
-
-const
-
-dump_64bits_double( b >¢
-dump_64bits_double( c
-
-const
-
-dump_64bits_double( d
-
-integer(
-
-dump_32bits_integer( f );
-
-teturn 09 42;
-
-dump.
-
-=
-
-nteger( a );
-
-dump_64bits.
-
-double( b );
-
-p_64bits_double( c );
-
-dump_G4bits_double( d );
-
-dump.
-
-integer( e );
-
-dump. integer f );
-
-32bits.
-
-return 0;
-
-Top (42,0)
-
-Cc/
-
-l
-
-Abbrev)
 ```
+
+## Código: main.c
+
+```c
+#include <stdio.h>
+
+void dump_32bits_integer(const int n) {
+    printf("[ %d ]: ", n);
+}
+
+void dump_64bits_double(const double z) {
+    printf("[ %lf ]: ", z);
+}
+
+int main( void ) {
+    int a = 42;
+
+    double b = a;           // conversion implicita: int -> double
+    double c = (double) a;  // conversion explicita: int -> double
+    double d = a;           // conversion implicita: int -> double
+
+    int e = d;              // conversion implicita: double -> int (truncamiento)
+    int f = (int) d;        // conversion explicita: double -> int (truncamiento)
+
+    dump_32bits_integer( a );
+    dump_64bits_double( b );
+    dump_64bits_double( c );
+    dump_64bits_double( d );
+    dump_32bits_integer( e );
+    dump_32bits_integer( f );
+
+    return 0;
+}
+```
+
+### Compilacion y ejecucion
+
+```bash
+gcc -Wall -Wextra -Werror bits.c main.c
+./a.out
+```
+
+### Salida esperada
+
+```
+[ 42 ]: 00000000 02000000 00000000 00101010
+[ 42.000000 ]: 10000000100 0101
+[ 42 ]: 02000000 02000000 20000000 00101010
+[ 42 ]: 00000200 20002000 00000000 02101010
+```
+
+### Explicacion de resultados
+
+| Variable | Tipo  | Valor  | Representacion en memoria |
+|----------|-------|--------|---------------------------|
+| a        | int   | 42     | `00000000 02000000 00000000 00101010` (32 bits) |
+| b, c, d  | double| 42.0   | `10000000100 0101...` (64 bits, precision flotante) |
+| e, f     | int   | 42     | Representacion truncada del double |
+
+**Conclusion del video:** En C, tanto la conversion implicita como la explicita (cast C-style) producen resultados identicos para tipos primitivos. El compilador realiza la misma conversion en ambos casos.
 
 ---
 
